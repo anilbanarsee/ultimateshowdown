@@ -1,0 +1,15 @@
+// Dota Heroes File
+// NOTE: This is not for creating new heroes, this is for taking a currently existing hero as a template and overriding
+// the specified key-value combinations.  Use override_hero <hero_to_override> for this.
+"DOTAHeroes"
+{
+	//=================================================================================================================
+	// HERO: Abaddon
+	//=================================================================================================================
+	"npc_dota_hero_abbadon_super_strength"
+	{
+		"override_hero"				"npc_dota_hero_abaddon"			// Hero to override
+		"Ability1"					"super_strength_lua"		// Ability 1
+		"Ability2"					"shadow_clone_datadriven"
+	}
+}
