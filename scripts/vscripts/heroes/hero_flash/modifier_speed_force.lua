@@ -12,13 +12,13 @@ function modifier_speed_force:DeclareFunctions()
 end
 
 function modifier_speed_force:GetModifierMoveSpeed_Absolute(params)
-	return 1000;
+	return 5000;
 end
 
 function modifier_speed_force:GetModifierMoveSpeed_Max(params)
-	return 1000;
+	return 5000;
 end
 
 function modifier_speed_force:GetModifierAttackSpeedBonus_Constant(params)
-	return 100;
+	return 1000;
 end

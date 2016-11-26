@@ -158,8 +158,10 @@
 
 	"speed_force"
 	{
-		"BaseClass"			"ability_datadriven"
+		"BaseClass"			"ability_lua"
+		"ScriptFile" 		"speed_force"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
 		
 		"AbilityCastPoint"	"0"
 		
@@ -183,37 +185,8 @@
 			}
 		}
 		
-		"OnToggleOn"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"  "modifier_speed_force"
-				"Target"		"CASTER"
-			}
-		}
-		"OnToggleOff"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName" "modifier_speed_force"
-				"Target"
-				{
-					"Center" "CASTER"
-					"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
-				}
-			}
-		}
-		"Modifiers"
-		{
-			"modifier_speed_force"
-			{
-				"Passive"	"0"
-				"IsHidden"	"0"
-				"IsDebuff"	"0"
-				
-				"ScriptFile"	"heroes/hero_flash/modifier_speed_force.lua"
-			}
-		}
+
+
 	}
 
 	//=================================================================================================================
