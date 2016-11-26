@@ -7,5 +7,5 @@ function devil_fruit_lua:OnUpgrade()
 	
 	local caster = self:GetCaster();
 	
-	caster:AddNewModifier(caster, self, "modifier_devil_fruit_lua", { duration = 200000000000000000000000000}); 
+	caster:AddNewModifier(caster, self, "modifier_devil_fruit_lua", { }); 
 end
