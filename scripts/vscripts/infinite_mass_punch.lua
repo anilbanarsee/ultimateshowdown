@@ -9,22 +9,22 @@ function infinite_mass_punch:OnSpellStart()
 	target = self:GetCursorPosition();
 	
 	n = 1;
-	print(target);
+	
 	casterPos = caster:GetAbsOrigin()
 	forwardVec = ( target - casterPos ):Normalized()
 	iPS = 50;
-	local startspeed = 1000;
-	local endspeed = 100000;
+	local startspeed = 500;
+	local endspeed = 10000;
 	speed = startspeed;
 	
 	local totalDistance =  (target-casterPos): Length2D()
-	local interval = speed/iPS
-	local speedDiff = endspeed-startspeed;
+	--local interval = speed/iPS
+	--local speedDiff = endspeed-startspeed;
 	
-	local numInts = totalDistance/interval;
+	--local numInts = totalDistance/interval;
 	
-	speedInc = speedDiff/numInts
-	print("Predicted Ints" .. numInts)
+	speedInc = (((endspeed*endspeed)-(startspeed*startspeed))/(2*totalDistance))/iPS
+	print(speedInc)
 	
 	caster:SetThink("Move", self)
 
@@ -39,8 +39,7 @@ function infinite_mass_punch:Move()
 	FindClearSpaceForUnit( caster, casterPos, false )
 	
 	if(target-casterPos):Length2D() <= speed/iPS then
-		print("EndSpeed" .. speed)
-		print("End Intervals" .. n)
+		print(speed)
 		return nil
 	else
 		return 1/iPS
