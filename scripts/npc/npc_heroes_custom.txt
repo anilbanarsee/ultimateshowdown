@@ -11,6 +11,7 @@
 		"override_hero"				"npc_dota_hero_abaddon"			// Hero to override
 		"Ability1"					"speed_force"		// Ability 1
 		"Ability2"					"shadow_clone_datadriven"
+		"Ability3"					"infinite_mass_punch"
 	}
 	//=================================================================================================================
 	// HERO: Portgas - Ember Spirit
@@ -18,11 +19,11 @@
 	"npc_dota_hero_abbadon_super_strength"
 	{
 		"override_hero"				"npc_dota_hero_ember_spirit"			// Hero to override
-		"Ability1"					"flame_guard_datadriven"		// Ability 1
+		"Ability1"					"devil_fruit_lua"		// Ability 1
 		"Ability2"					"lina_dragon_slave_datadriven"
 		"Ability3"					"sprint_lua"
-		"Ability4"					"sniper_assassinate_datadriven"
-		"Ability5"					"null"
+		"Ability4"					"twin_gun_lua"
+		"Ability5"					"Null"
 	}
 	//=================================================================================================================
 	// HERO: Wisp
