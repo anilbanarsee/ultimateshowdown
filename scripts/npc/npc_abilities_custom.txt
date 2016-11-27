@@ -188,38 +188,6 @@
 
 
 	}
-	"infinite_mass_punch"
-	{
-		"BaseClass"			"ability_lua"
-		"ScriptFile" 		"infinite_mass_punch"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT"
-
-		
-		"AbilityCastPoint"	"0"
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"speed_set" 		"600 800 1000 1200"
-			}
-			
-			"02"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"attack_speed_up" "40 60 80 100"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"increased_damage"	"25"
-			}
-		}
-		
-
-
-	}
 
 	//=================================================================================================================
 	// Ember Spirit - Ace
@@ -231,6 +199,8 @@
 		"BaseClass" "ability_lua"
 		"ScriptFile" "devil_fruit_lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"	
+		"AbilityTextureName"            "devil_fruit" 
+		
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -242,12 +212,31 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0"
+		"Damage"				"10 20 30 40"
 	
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-
+		"OnSpellStart"
+			{
+				"FireSound"
+				{
+					"Target"						"CASTER"
+					"EffectName"					"Hero_EmberSpirit.FlameGuard.Cast"
+				}
+			
+				"RemoveModifier"
+				{
+					"Target"						"CASTER"
+					"ModifierName"					"modifier_flame_guard_buff_datadriven"
+				}
+			
+				"ApplyModifier"
+				{
+					"Target"						"CASTER"
+					"ModifierName"					"modifier_flame_guard_buff_datadriven"
+				}
+			}
 	}
 	"fire_fist_lua"
 	{
@@ -281,6 +270,8 @@
 		"BaseClass" "ability_lua"
 		"ScriptFile" "sprint_lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"	
+		"AbilityTextureName"            "sprint" 
+		
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -311,7 +302,7 @@
 		"AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
 		"SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"               "1"
-		"AbilityTextureName"            "icons/lina_fiery_soul_lua.png" ///Anil Fix this shit
+		"AbilityTextureName"            "lina_fiery_soul_lua" 
 
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -403,6 +394,313 @@
 			}
 		}
 	}
+	"sniper_assassinate_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             "ability_datadriven"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
+		"FightRecapLevel"               "2"
+		"AbilityTextureName"            "twin_gun"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"              "2000 2500 3000"
+		"AbilityCastRangeBuffer"        "600"
+		"AbilityCastPoint"              "2.0 2.0 2.0"
 
+		// Time     
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "0.0" // 20.0 15.0 10.0"
 
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"                 "355 505 655"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0" // 175 275 375"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"   "0.0"   // Modifier just does damage
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"                  "FIELD_INTEGER"
+				"projectile_speed"          "2500 2500 2500"
+			}
+			"02"
+			{
+				"var_type"                  "FIELD_INTEGER"
+				"tooltip_range"             "2000 2500 3000"
+			}
+			// Extra variables
+			"03"
+			{
+				"var_type"                  "FIELD_FLOAT"
+				"charge_time"               "2.0"
+			}
+			"04"
+			{
+				"var_type"                  "FIELD_FLOAT"
+				"debuff_duration"           "4.0"
+			}
+		}
+		
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"                 "soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
+			"particle"                  "particles/units/heroes/hero_sniper/sniper_assassinate.vpcf"
+			"particle"                  "particles/units/heroes/hero_sniper/sniper_crosshair.vpcf"
+		}
+		
+		"OnAbilityPhaseStart"
+		{
+			"FireSound"
+			{
+				"Target"                "CASTER"
+				"EffectName"            "Ability.AssassinateLoad"
+			}
+			
+			"ApplyModifier"
+			{
+				"Target"                "CASTER"
+				"ModifierName"          "modifier_assassinate_caster_datadriven"
+			}
+		
+			"ApplyModifier"
+			{
+				"Target"                "TARGET"
+				"ModifierName"          "modifier_assassinate_target_datadriven"
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"            "heroes/hero_sniper/assassinate.lua"
+				"Function"              "assassinate_register_target"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"Target"                "CASTER"
+				"EffectName"            "Ability.Assassinate"
+			}
+		
+			"TrackingProjectile"
+			{
+				"Target"                "TARGET"
+				"EffectName"            "particles/units/heroes/hero_sniper/sniper_assassinate.vpcf"
+				"Dodgeable"             "1"
+				"ProvidesVision"        "0"
+				"MoveSpeed"             "%projectile_speed"
+				"SourceAttachment"      "DOTA_PROJECTILE_ATTACHMENT_HITLOCATION"
+			}
+			
+			"FireSound"
+			{
+				"Target"                "CASTER"
+				"EffectName"            "Hero_Sniper.AssassinateProjectile"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"FireSound"
+			{
+				"Target"                "TARGET"
+				"EffectName"            "Hero_Sniper.AssassinateDamage"
+			}
+		
+			"Damage"
+			{
+				"Target"                "TARGET"
+				"Damage"                "%AbilityDamage"
+				"Type"                  "DAMAGE_TYPE_MAGICAL"
+			}
+			
+			"RemoveModifier"
+			{
+				"Target"                "TARGET"
+				"ModifierName"          "modifier_assassinate_target_datadriven"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_assassinate_caster_datadriven"
+			{
+				"Duration"              "%charge_time"
+			
+				"OnOrder"
+				{
+					"RemoveModifier"
+					{
+						"Target"        "CASTER"
+						"ModifierName"  "modifier_assassinate_caster_datadriven"
+					}
+					
+					"RunScript"
+					{
+						"ScriptFile"            "heroes/hero_sniper/assassinate.lua"
+						"Function"              "assassinate_remove_target"
+					}
+				}
+			}
+		
+			"modifier_assassinate_target_datadriven"
+			{
+				"IsHidden"              "0"
+				"IsPurgeble"            "0"
+				"IsDebuff"              "1"
+				"Duration"              "%debuff_duration"
+				
+				"EffectName"            "particles/units/heroes/hero_sniper/sniper_crosshair.vpcf"
+				"EffectAttachType"      "follow_overhead"
+				
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"          "MODIFIER_STATE_VALUE_DISABLED"
+					"MODIFIER_STATE_PROVIDES_VISION"    "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	"flame_guard_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"devil_fruit"
+		
+		"AbilitySpecial"
+		{
+			
+		
+			
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"400"
+			}	
+							
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"tick_interval"					"0.2"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_per_second"				"30 40 50 60"
+			}
+		}
+		
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"							"soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+			"particle"							"particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+		}
+		
+		"OnUpgrade"
+		{
+			"FireSound"
+			{
+				"Target"						"CASTER"
+				"EffectName"					"Hero_EmberSpirit.FlameGuard.Cast"
+			}
+		
+			"RemoveModifier"
+			{
+				"Target"						"CASTER"
+				"ModifierName"					"modifier_flame_guard_buff_datadriven"
+			}
+		
+			"ApplyModifier"
+			{
+				"Target"						"CASTER"
+				"ModifierName"					"modifier_flame_guard_buff_datadriven"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_flame_guard_buff_datadriven"
+			{
+				
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"				"TARGET"
+						"EffectName"			"particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+						"EffectAttachType"		"start_at_customorigin"
+						"ControlPointEntities"
+						{
+							"TARGET"			"attach_origin"
+							"TARGET"			"attach_origin"
+						}
+					}
+					
+					"FireSound"
+					{
+						"Target"				"TARGET"
+						"EffectName"			"Hero_EmberSpirit.FlameGuard.Loop"
+					}
+					
+					"RunScript"
+					{
+						"ScriptFile"			"heroes/hero_ember_spirit/flame_guard.lua"
+						"Function"				"flame_guard_init"
+					}
+				}
+							
+				"ThinkInterval"					"%tick_interval"
+				"OnIntervalThink"
+				{
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"			"TARGET"
+							"Radius"			"%radius"
+							"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types"				"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"Flags"				"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+						}
+						
+						"Action"
+						{
+							"Damage"
+							{
+								"Target"		"TARGET"
+								"Damage"		"%damage_per_second * %tick_interval"
+								"Type"			"DAMAGE_TYPE_MAGICAL"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
