@@ -193,7 +193,7 @@
 		"BaseClass"			"ability_lua"
 		"ScriptFile" 		"infinite_mass_punch"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT"
-
+		"AbilityCastRange"              "3000"
 		
 		"AbilityCastPoint"	"0"
 		
@@ -202,7 +202,7 @@
 			"01"
 			{
 				"var_type"		"FIELD_INTEGER"
-				"speed_set" 		"600 800 1000 1200"
+				"range" 		"3000"
 			}
 			
 			"02"
@@ -216,7 +216,11 @@
 				"increased_damage"	"25"
 			}
 		}
-		
+		"precache"
+		{
+			"soundfile"   "soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
+			"soundfile"   "soundevents/game_sounds_heroes/game_sounds_tusk.vsndevts"
+		}
 
 
 	}
