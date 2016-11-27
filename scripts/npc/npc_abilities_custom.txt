@@ -188,6 +188,38 @@
 
 
 	}
+	"infinite_mass_punch"
+	{
+		"BaseClass"			"ability_lua"
+		"ScriptFile" 		"infinite_mass_punch"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT"
+
+		
+		"AbilityCastPoint"	"0"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"speed_set" 		"600 800 1000 1200"
+			}
+			
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"attack_speed_up" "40 60 80 100"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"increased_damage"	"25"
+			}
+		}
+		
+
+
+	}
 
 	//=================================================================================================================
 	// Ember Spirit - Ace
