@@ -5,6 +5,7 @@
 {
 	//=================================================================================================================
 	// HERO: Abaddon
+	// HERO: The Flash - Abaddon
 	//=================================================================================================================
 	"npc_dota_hero_abbadon_super_strength"
 	{
@@ -17,6 +18,7 @@
 	// HERO: Portgas - Ember Spirit
 	//=================================================================================================================
 	"npc_dota_hero_abbadon_super_strength"
+	"npc_dota_hero_ember_spirit"
 	{
 		"override_hero"				"npc_dota_hero_ember_spirit"			// Hero to override
 		"Ability1"					"flame_guard_datadriven"		// Ability 1
@@ -26,7 +28,7 @@
 		"Ability5"					"null"
 	}
 	//=================================================================================================================
-	// HERO: Wisp
+	// HERO: Test - Wisp
 	//=================================================================================================================
 	"npc_dota_hero_wisp_custom"
 	{
@@ -36,6 +38,34 @@
 		"Ability3"					"Null"
 		"Ability4"					"Null"
 		"Ability5"					"Null"
+		"Ability6"					"Null"
+		"Ability7"					"Null"
+	}
+	//=================================================================================================================
+	// HERO: Ling Yao - Juggernaut
+	//=================================================================================================================
+	"npc_dota_hero_juggernaut"
+	{
+		"override_hero"				"npc_dota_hero_jugggernaut"
+		"Ability1"					"grenade"
+		"Ability2"					"strafe"
+		"Ability3"					"backflip"
+		"Ability4"					"slash"
+		"Ability5"					"Null"
+		"Ability6"					"Null"
+		"Ability7"					"Null"
+	}
+	//=================================================================================================================
+	// HERO: Snake - Kunkka
+	//=================================================================================================================
+	"npc_dota_hero_kunkka"
+	{
+		"override_hero"				"npc_dota_hero_kunkka"
+		"Ability1"					"lone_druid_true_form_datadriven"
+		"Ability2"					"lone_druid_true_form_druid_datadriven"
+		"Ability3"					"basic_nuke"
+		"Ability4"					"basic_nuke"
+		"Ability5"					"techies_remote_mines_datadriven"
 		"Ability6"					"Null"
 		"Ability7"					"Null"
 	}
