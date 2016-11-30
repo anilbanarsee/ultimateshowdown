@@ -160,9 +160,9 @@
 	{
 		"BaseClass"			"ability_lua"
 		"ScriptFile" 		"speed_force"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
+		"MaxLevel"			"1"
 		"AbilityCastPoint"	"0"
 		
 		"AbilitySpecial"
@@ -195,7 +195,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityCastRange"              "3000"
 		
-		"AbilityCastPoint"	"0"
+		"AbilityCastPoint"	"1"
 		
 		"AbilitySpecial"
 		{
@@ -205,16 +205,6 @@
 				"range" 		"3000"
 			}
 			
-			"02"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"attack_speed_up" "40 60 80 100"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"increased_damage"	"25"
-			}
 		}
 		"precache"
 		{
@@ -223,6 +213,53 @@
 		}
 
 
+	}
+	"phase_dash"
+	{
+		"BaseClass"		"ability_lua"
+		"ScriptFile"	"phase_dash"
+		"AbilityManaCost"		"20"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityCastRange"	"1000"
+		"AbilityCastPoint"  "0"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"damage"		"200 300 400 500"
+			}
+		
+		}
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts"
+		}
+		
+	}
+	"electrokinesis"
+	{
+		"BaseClass"		"ability_lua"
+		"ScriptFile"	"electrokinesis"
+		"AbilityManaCost"		"20"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastPoint"  "0"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"damage"		"200 300 400 500"
+			}
+		
+		}
+		"precache"
+		{
+
+		}
+		
 	}
 
 	//=================================================================================================================

@@ -8,10 +8,11 @@
 	//=================================================================================================================
 	"npc_dota_hero_abbadon_super_strength"
 	{
-		"override_hero"				"npc_dota_hero_abaddon"			// Hero to override
+		"override_hero"				"npc_dota_hero_bloodseeker"			// Hero to override
 		"Ability1"					"speed_force"		// Ability 1
-		"Ability2"					"shadow_clone_datadriven"
+		"Ability2"					"electrokinesis"
 		"Ability3"					"infinite_mass_punch"
+		"Ability4"					"phase_dash"
 	}
 	//=================================================================================================================
 	// HERO: Portgas - Ember Spirit
