@@ -6,4 +6,5 @@
 	"npc_dota_hero_beastmaster" "1" 
 	"npc_dota_hero_ember_spirit" "1"
 	"npc_dota_hero_wisp" "1"
+	"npc_dota_hero_advent_avater" "1"
 } 

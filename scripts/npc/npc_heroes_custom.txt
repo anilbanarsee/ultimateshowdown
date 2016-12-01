@@ -40,4 +40,15 @@
 		"Ability6"					"Null"
 		"Ability7"					"Null"
 	}
+	//=================================================================================================================
+	// HERO: Advent Avater
+	// Uses the hero sniper as a base
+	//=================================================================================================================
+	{
+		"override_hero"				"npc_dota_hero_sniper"
+		"Ability1"					"nullrod"
+		"Ability2"					"Null"
+		"Ability3"					"Null"
+		"Ability4"					"Null"
+	}
 }
