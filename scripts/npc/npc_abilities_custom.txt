@@ -193,7 +193,7 @@
 		"BaseClass"			"ability_lua"
 		"ScriptFile" 		"infinite_mass_punch"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityCastRange"              "3000"
+		"AbilityCastRange"              "5000"
 		
 		"AbilityCastPoint"	"1"
 		
@@ -202,7 +202,7 @@
 			"01"
 			{
 				"var_type"		"FIELD_INTEGER"
-				"range" 		"3000"
+				"range" 		"4000"
 			}
 			
 		}
@@ -235,6 +235,7 @@
 		"precache"
 		{
 			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts"
+			"particle"			"particles/units/heroes/hero_magnataur"
 		}
 		
 	}

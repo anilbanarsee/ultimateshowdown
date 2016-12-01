@@ -33,13 +33,13 @@ function modifier_speed_force:OnCreated(kv)
 	target = self:GetParent()
 	--print("Creating abaddon sheild thing")
 --target.ShieldParticle = ParticleManager:CreateParticle("particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
---shield_size = 50
---ParticleManager:SetParticleControl(target.ShieldParticle, 1, Vector(shield_size,0,shield_size))
+
+--ParticleManager:SetParticleControl(target.ShieldParticle, 1, Vector(100,100,0))
 --ParticleManager:SetParticleControl(target.ShieldParticle, 2, Vector(shield_size,0,shield_size))
 --ParticleManager:SetParticleControl(target.ShieldParticle, 4, Vector(shield_size,0,shield_size))
 --ParticleManager:SetParticleControl(target.ShieldParticle, 5, Vector(shield_size,0,0))
 
---ParticleManager:SetParticleControlEnt(target.ShieldParticle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+--ParticleManager:SetParticleControlEnt(target.ShieldParticle, 1, target, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
 
 end
 

@@ -26,6 +26,15 @@ function modifier_phase_dash_charges:AddStack()
 
 end
 
+function modifier_phase_dash_charges:CanRemoveCharge()
+
+	if charges==0 then
+		return false
+	end
+	
+	return true
+
+end
 function modifier_phase_dash_charges:RemoveCharge()
 	
 	if charges==0 then
