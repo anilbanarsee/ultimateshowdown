@@ -44,6 +44,7 @@
 	// HERO: Advent Avater
 	// Uses the hero sniper as a base
 	//=================================================================================================================
+	"npc_dota_hero_advent_avater"
 	{
 		"override_hero"				"npc_dota_hero_sniper"
 		"Ability1"					"nullrod"
