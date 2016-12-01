@@ -16,9 +16,9 @@ function modifier_infinite_mass_punch:OnCreated(kv)
       print("Timer done")
     end
   })
-	self:GetParent():AddNoDraw()
+	--self:GetParent():AddNoDraw()
   end
-	self:GetParent():AddNoDraw()
+	--self:GetParent():AddNoDraw()
 	--caster:SetModel("models/items/keeper_of_the_light/cradle_of_lights_spirit_stag/cradle_of_lights_spirit_stag.vmdl")
 end
 
@@ -35,6 +35,6 @@ function modifier_infinite_mass_punch:OnDestroy()
     end
   })
   end
-	self:GetParent():RemoveNoDraw()
+	--self:GetParent():RemoveNoDraw()
 
 end
